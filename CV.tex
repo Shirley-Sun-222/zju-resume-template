@@ -128,15 +128,6 @@
 \projectsep
 
 % --- 第二个项目 ---
-\textbf{AIGC驱动的超进化自动挖坑机 (Agent)} \hfill 2025.07 -- 2025.08 \titlebreak
-项目描述：一个为化学或材料科学实验设计的自动化流体精密控制系统。它提供了一个图形用户界面（GUI），用于实时监控和控制多个蠕动泵、柱塞泵以及多通道直流电源，并支持自动化实验流程协议。
-\begin{itemize}[nosep, topsep=\intraProjectListTopSep]
-    \item \textbf{系统架构}：设计并实现了基于\textbf{生产者-消费者模型}的\textbf{多进程（Multi-processing）}架构。通过 multiprocessing.Queue 进行跨进程指令传输与状态同步，有效解决了在处理高频串口 I/O 阻塞时的界面卡顿问题
-    \item \textbf{面向对象封装}： 采用\textbf{工厂模式 (Factory Pattern)} 和\textbf{抽象基类 (Abstract Base Class)}构建硬件驱动层。定义了统一的设备接口规范，实现了对不同品牌设备的统一调用，极大地提升了系统的可扩展性与代码复用率。
-    \item \textbf{自动化引擎开发}： 独立研发了一套可编排的自动化协议系统。支持用户在 GUI 中\textbf{自定义}复杂的实验时序（启动、参数设置、延时、停止），并基于 \textbf{JSON} 实现了协议序列化存储与加载，实现了实验流程的全自动化执行。
-    \item \textbf{交互与可视化}： 基于 \textbf{PyQt6} 构建响应式图形界面，集成 \textbf{PyQtGraph} 实现多通道数据（电压、电流、流速）的毫秒级实时动态绘制；
-    利用 \textbf{Pandas} 实现实验数据的后台自动清洗与 Excel 导出。
-\end{itemize}
 
 \textbf{实验流体精密控制系统} \hfill 2025.07 -- 2025.08 \titlebreak
 项目描述：一个为化学或材料科学实验设计的自动化流体精密控制系统。它提供了一个图形用户界面（GUI），用于实时监控和控制多个蠕动泵、柱塞泵以及多通道直流电源，并支持自动化实验流程协议。
@@ -148,10 +139,12 @@
     利用 \textbf{Pandas} 实现实验数据的后台自动清洗与 Excel 导出。
 \end{itemize}
 
+% --- 第三个项目 ---
+
 \textbf{基于历史工业警报数据的分类模型与预测模型} \hfill 2025.09 -- 2025.10 \titlebreak
-项目描述：基于工业环境中的警报事件数据集，预测模型目标预测未来每小时的警报数量。
+项目描述：基于工业环境中的警报事件数据集，训练模型预测未来每小时的警报数量。
 \begin{itemize}[nosep, topsep=\intraProjectListTopSep]
-    \item \textbf{预测模型}：负责\textbf{随机森林}和\textbf{XGBoost}预测模型部分,实现了0.1级别的均方根误差。
+    \item \textbf{预测模型}：负责\textbf{随机森林}和\textbf{XGBoost}机器学习部分,实现了0.1级别的均方根误差。
     \item \textbf{特征工程}：基于静态时间信息，规划了\textbf{周期性时间特征、滞后性时间特征、短期趋势特征}等高级时间特征，使得模型预测误差降低约99\%。
     \item \textbf{特征筛选}：利用模型自身训练后输出的\textbf{特征重要性（Feature Importance）}，对特征的贡献度进行排序，选取\textbf{平均收益最高}的特征进行模型训练。提高模型训练速度的同时降低过拟合风险。
 \end{itemize}
